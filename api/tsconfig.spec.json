@@ -20,5 +20,5 @@
     "outDir": "./dist"
   },
   "exclude": ["node_modules"],
-  "include": ["./src", "models/index.ts", "seed-sql", "spec/controllers/RestaurauntController.ts", "spec/factory.ts"],
+  "include": ["./src", "models/index.ts", "seed-sql", "spec/controllers/RestaurauntController.ts"],
 }
