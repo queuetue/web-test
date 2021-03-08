@@ -1,0 +1,34 @@
+config/config.json
+
+# Project dependencies
+.cache
+.idea
+node_modules
+dist
+.env.*
+*.log
+secrets.yaml
+
+# Build directory
+/public
+.DS_Store
+/elk/data
+/data
+/data/dump.rdb
+!/data/localstack/**/*
+!/data/redis/**/*
+**/.npmrc
+
+#vscode files
+.code-workspace
+
+deploy/build_paths.txt
+
+.google-private-key.pem
+jobs/google-feeds/availability_feeds/
+jobs/google-feeds/service_feeds/
+jobs/google-feeds/merchant_feeds/
+
+# Error logs
+yarn-error.log
+lerna-debug.log
