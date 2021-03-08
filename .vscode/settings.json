@@ -1,0 +1,18 @@
+{
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#321877",
+    "titleBar.activeBackground": "#4522A6",
+    "titleBar.activeForeground": "#FCFCFE"
+  },
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "askForPassword": true,
+      "driver": "PostgreSQL",
+      "name": "kraken",
+      "connectString": "postgresql://root:password@kraken.local/web-test"
+    }
+  ]
+}
