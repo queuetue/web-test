@@ -40,7 +40,12 @@
             {{ inventory.availableCount }} / {{ inventory.seatCount }} ({{
               inventory.bookedCount
             }})
-            <button v-on:click="addReservationButtonClick">+</button>
+            <button
+              v-if="inventory.availableCount > 0"
+              v-on:click="addReservationButtonClick"
+            >
+              +
+            </button>
           </div>
         </li>
         <div
