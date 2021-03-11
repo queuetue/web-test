@@ -1,8 +1,10 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/reservations">Reservations</router-link> |
-      <router-link to="/inventory">Inventory</router-link>
+    <div v-if="$data.restaurantID">
+      <div id="nav">
+        <router-link to="/reservations">Reservations</router-link> |
+        <router-link to="/inventory">Inventory</router-link>
+      </div>
     </div>
     <router-view />
   </div>
@@ -30,3 +32,23 @@
   }
 }
 </style>
+
+<script>
+import axios from 'axios'
+
+export default {
+  name: 'App',
+  async mounted() {
+    try {
+      if (this.$route.params.restaurantID) {
+        const url = `http://localhost:8080/restaurants/${this.$route.params.restaurantID}`
+        await axios.get(url).then(result => {
+          this.$data.restaurant = result.data
+        })
+      }
+    } catch (error) {
+      console.error(error)
+    }
+  }
+}
+</script>

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>Restaurant {{ $route.params.restaurantID }}</h1>
     <h1>Reservations</h1>
   </div>
 </template>
@@ -12,7 +13,7 @@ export default {
 
   async mounted() {
     try {
-      await axios.get('http://localhost:9090/test')
+      await axios.get('http://localhost:8080/restaurants/1/inventory_items')
     } catch (error) {
       console.error(error)
     }

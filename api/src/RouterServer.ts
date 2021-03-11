@@ -20,11 +20,13 @@ export class RouterServer extends Server {
   }
 
   private setupControllers(): void {
+    console.log(`Loading Controllers`)
     type Controllers = {}
     const ctlrInstances: any = []
 
     for (const ctrlName in controllers) {
       if (controllers.hasOwnProperty(ctrlName)) {
+        console.log(` ... ${ctrlName}`)
         const controller = new (<Controllers>controllers)[ctrlName]()
         ctlrInstances.push(controller)
       } else {

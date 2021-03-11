@@ -9,6 +9,7 @@ import {
   PrimaryKey,
   Table,
   UpdatedAt,
+  DataType
 } from 'sequelize-typescript'
 
 import { Restaurant } from './Restaurant'
@@ -29,8 +30,20 @@ export class InventoryItem extends Model<InventoryItem> {
   @HasMany(() => Reservation)
   reservations: Reservation
 
-  @Column
-  reservation_at: Date
+  @Column({ type: DataType.INTEGER, allowNull: false })
+  dayNumber: number
+
+  @Column({ type: DataType.INTEGER, allowNull: false })
+  blockNumber: number
+
+  @Column({ type: DataType.INTEGER, allowNull: false, defaultValue: 0 })
+  seatCount: number
+
+  @Column({ type: DataType.INTEGER, allowNull: false, defaultValue: 0 })
+  bookedCount: number
+
+  @Column({ type: DataType.INTEGER, allowNull: false, defaultValue: 0 })
+  availableCount: number
 
   @DeletedAt
   deleted_at: string

@@ -2,13 +2,13 @@
   "name": "@wisely/test",
   "version": "1.0.0",
   "scripts": {
-    "dev": "yarn tsc-watch --onSuccess \"yarn node ./dist/src/index.js\"",
+    "dev": "yarn tsc-watch --onSuccess \"yarn node ./dist/index.js\"",
     "test": "yarn jest --runInBand",
     "test:unit": "ENV_FILE=./config/.env.test jest",
     "build": "rm -rf dist && yarn tsc",
     "start": "node ./dist/start.js"
   },
-  "main": "./dist/src/index.js",
+  "main": "./dist/index.js",
   "private": true,
   "dependencies": {
     "@overnightjs/core": "^1.7.4",
